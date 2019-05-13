@@ -39,4 +39,41 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
+let anchorLinks = document.getElementsByTagName('a')
+let h1 = document.querySelector('h1');
+let btn = document.querySelector('button');
+let headerImg = document.getElementById("cta-img");
+let bannerImg = document.getElementById("middle-img");
+let footerText = document.querySelector('footer p');
+let contact = document.querySelectorAll('.contact');
+
+console.log(contact[0]);
+
+
+
+
+
+
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const textValue = Object.values(siteContent.nav);
+for(let i = 0; i < anchorLinks.length; i++) {
+  anchorLinks[i].textContent = textValue[i]
+}
+
+h1.innerHTML = siteContent.cta["h1"];
+btn.textContent = siteContent.cta["button"];
+headerImg.setAttribute("src", siteContent.cta["img-src"]);
+bannerImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+
+
+
+// const mainContent = Object.values(siteContent["main-content"]);
+// console.log(mainContent)
+// for(let i = 0; i < mainElement.length; i++) {
+//   mainElement[i].textContent = mainContent[i];
+// }
+
+
+footerText.textContent = siteContent.footer.copyright;
