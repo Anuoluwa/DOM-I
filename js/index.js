@@ -45,13 +45,8 @@ let btn = document.querySelector('button');
 let headerImg = document.getElementById("cta-img");
 let bannerImg = document.getElementById("middle-img");
 let footerText = document.querySelector('footer p');
-let contact = document.querySelectorAll('.contact');
-
-console.log(contact[0]);
-
-
-
-
+let mainContent = document.querySelector('.main-content').children;
+let contact = document.querySelector('.contact').children;
 
 
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -67,13 +62,19 @@ headerImg.setAttribute("src", siteContent.cta["img-src"]);
 bannerImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
 
+console.log('fefefe',mainContent)
+let mainVal = Object.values(siteContent["main-content"]);
+console.log('values',mainVal)
+
+for(let i = 0; i < mainContent.length; i++) {
+ mainContent[i].textContent = mainVal[i]
+}
 
 
-// const mainContent = Object.values(siteContent["main-content"]);
-// console.log(mainContent)
-// for(let i = 0; i < mainElement.length; i++) {
-//   mainElement[i].textContent = mainContent[i];
-// }
+let valContact = Object.values(siteContent.contact)
+for(let i = 0; i < contact.length; i++) {
+ contact[i].textContent = valContact[i]
+}
 
 
 footerText.textContent = siteContent.footer.copyright;
