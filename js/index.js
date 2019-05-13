@@ -45,7 +45,6 @@ let btn = document.querySelector('button');
 let headerImg = document.getElementById("cta-img");
 let bannerImg = document.getElementById("middle-img");
 let footerText = document.querySelector('footer p');
-let mainContent = document.querySelector('.main-content').children;
 let contact = document.querySelector('.contact').children;
 
 
@@ -55,19 +54,23 @@ const textValue = Object.values(siteContent.nav);
 for(let i = 0; i < anchorLinks.length; i++) {
   anchorLinks[i].textContent = textValue[i]
 }
+let breaks = siteContent.cta["h1"].split(' ')
+console.log(breaks)
 
-h1.innerHTML = siteContent.cta["h1"];
+h1.innerHTML = `<h1> ${breaks[0]} <br> ${breaks[1]} <br> ${breaks[2]} </h1>`;
 btn.textContent = siteContent.cta["button"];
 headerImg.setAttribute("src", siteContent.cta["img-src"]);
 bannerImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
+let topContent = document.querySelector('.top-content').children;
+console.log('fefefe',topContent[1])
 
-console.log('fefefe',mainContent)
 let mainVal = Object.values(siteContent["main-content"]);
 console.log('values',mainVal)
 
-for(let i = 0; i < mainContent.length; i++) {
- mainContent[i].textContent = mainVal[i]
+for(let i = 0; i < topContent.length; i++) {
+  topContent[i].textConte
+
 }
 
 
