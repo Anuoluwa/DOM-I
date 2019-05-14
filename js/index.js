@@ -49,35 +49,76 @@ let contact = document.querySelector('.contact').children;
 
 
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-
-const textValue = Object.values(siteContent.nav);
-for(let i = 0; i < anchorLinks.length; i++) {
-  anchorLinks[i].textContent = textValue[i]
-}
 let breaks = siteContent.cta["h1"].split(' ')
-console.log(breaks)
-
 h1.innerHTML = `<h1> ${breaks[0]} <br> ${breaks[1]} <br> ${breaks[2]} </h1>`;
 btn.textContent = siteContent.cta["button"];
 headerImg.setAttribute("src", siteContent.cta["img-src"]);
 bannerImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-let topContent = document.querySelector('.top-content').children;
-console.log('fefefe',topContent[1])
-
-let mainVal = Object.values(siteContent["main-content"]);
-console.log('values',mainVal)
-
-for(let i = 0; i < topContent.length; i++) {
-  topContent[i].textConte
-
+const textValue = Object.values(siteContent.nav);
+for(let i = 0; i < anchorLinks.length; i++) {
+  anchorLinks[i].textContent = textValue[i]
 }
+
+let topContent = document.querySelectorAll('.top-content .text-content');
+topContent[0].innerHTML = `
+            <div class="top-content">
+            <div class="text-content">
+                <h4>${siteContent["main-content"]["features-h4"]}</h4>
+                <p>${siteContent["main-content"]["features-content"]}</p>
+            </div>
+           `
+
+topContent[1].innerHTML = `
+           <div class="top-content">
+           <div class="text-content">
+               <h4>${siteContent["main-content"]["about-h4"]}</h4>
+               <p>${siteContent["main-content"]["about-content"]}</p>
+           </div>
+          `
+
+let bottomContent = document.querySelectorAll('.bottom-content .text-content');
+
+bottomContent[0].innerHTML = `
+            <div class="top-content">
+            <div class="text-content">
+                <h4>${siteContent["main-content"]["services-h4"]}</h4>
+                <p>${siteContent["main-content"]["services-content"]}</p>
+            </div>
+           `
+
+bottomContent[1].innerHTML = `
+           <div class="top-content">
+           <div class="text-content">
+               <h4>${siteContent["main-content"]["product-h4"]}</h4>
+               <p>${siteContent["main-content"]["product-content"]}</p>
+           </div>
+          `
+bottomContent[2].innerHTML = `
+          <div class="top-content">
+          <div class="text-content">
+              <h4>${siteContent["main-content"]["vision-h4"]}</h4>
+              <p>${siteContent["main-content"]["vision-content"]}</p>
+          </div>
+         `
+
+
+
+// let mainVal = Object.values(siteContent["main-content"]);
+// console.log('values',mainVal)
+
+// for(let i = 0; i < topContent[0].children.length; i++) {
+//   topContent[i].textContent = mainVal[i]
+// }
+
+// for(let i = 0; i < topContent[0].children.length; i++) {
+//   topContent[1].children[i].textContent = mainVal[i]
+// }
 
 
 let valContact = Object.values(siteContent.contact)
 for(let i = 0; i < contact.length; i++) {
  contact[i].textContent = valContact[i]
 }
-
 
 footerText.textContent = siteContent.footer.copyright;
